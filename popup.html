@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Chess-Helfer</title>
+    <style>
+      body {
+        width: 260px;
+        margin: 0;
+        padding: 12px 14px;
+        background: #262421;
+        color: #e8e6e3;
+        font: 13px/1.4 system-ui, 'Segoe UI', sans-serif;
+      }
+      h1 {
+        font-size: 15px;
+        margin: 0 0 10px;
+      }
+      label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 8px 0;
+      }
+      select {
+        background: #1f1e1b;
+        color: inherit;
+        border: 1px solid #3c3a37;
+        border-radius: 4px;
+        padding: 2px 4px;
+      }
+      select:disabled {
+        opacity: 0.45;
+      }
+      p {
+        margin: 10px 0 0;
+        font-size: 11px;
+        color: #8b8987;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>♞ Chess-Helfer</h1>
+    <label>Aktiv <input type="checkbox" id="enabled" /></label>
+    <label>Auto-Zug <input type="checkbox" id="autoMove" /></label>
+    <label
+      >Auto-Verzögerung
+      <select id="autoMoveDelay">
+        <option value="0">Sofort</option>
+        <option value="500">0,5 s</option>
+        <option value="1000">1 s</option>
+        <option value="2000">2 s</option>
+      </select>
+    </label>
+    <label
+      >Rechenzeit
+      <select id="movetime">
+        <option value="300">0,3 s</option>
+        <option value="1000">1 s</option>
+        <option value="2000">2 s</option>
+        <option value="5000">5 s</option>
+      </select>
+    </label>
+    <label
+      >Anzahl Vorschläge
+      <select id="multipv">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+      </select>
+    </label>
+    <label
+      >Schlechtere Züge
+      <select id="inaccuracyRate">
+        <option value="0">Nie (optimal)</option>
+        <option value="15">Selten (15 %)</option>
+        <option value="30">Manchmal (30 %)</option>
+        <option value="50">Oft (50 %)</option>
+        <option value="100">Immer (100 %)</option>
+      </select>
+    </label>
+    <label
+      >Max. Abweichung
+      <select id="maxLoss">
+        <option value="50">Minimal (≤ 0,5)</option>
+        <option value="120">Leicht (≤ 1,2)</option>
+        <option value="250">Deutlich (≤ 2,5)</option>
+      </select>
+    </label>
+    <p>Läuft im Analysebrett (chess.com/analysis) und in Partien (chess.com/play, chess.com/game).</p>
+    <script src="popup.js"></script>
+  </body>
+</html>

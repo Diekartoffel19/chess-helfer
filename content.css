@@ -1,0 +1,118 @@
+#chess-helfer-arrows {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+}
+
+#chess-helfer-panel {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2147483000;
+  width: 240px;
+  background: #262421;
+  color: #e8e6e3;
+  border: 1px solid #3c3a37;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  font: 13px/1.4 system-ui, -apple-system, 'Segoe UI', sans-serif;
+  user-select: none;
+}
+
+#chess-helfer-panel .ch-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: #1f1e1b;
+  border-radius: 8px 8px 0 0;
+  cursor: move;
+  font-weight: 600;
+}
+
+#chess-helfer-panel .ch-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#chess-helfer-panel .ch-auto {
+  background: #2f2d29;
+  border: 1px solid #45423e;
+  border-radius: 4px;
+  color: #bab9b8;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+#chess-helfer-panel .ch-auto.ch-auto-on {
+  background: rgba(46, 160, 67, 0.25);
+  border-color: rgba(46, 160, 67, 0.85);
+  color: #7ee787;
+}
+
+#chess-helfer-panel .ch-min {
+  background: none;
+  border: 0;
+  color: inherit;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+#chess-helfer-panel.ch-collapsed .ch-body {
+  display: none;
+}
+
+#chess-helfer-panel .ch-body {
+  padding: 8px 10px 10px;
+}
+
+#chess-helfer-panel .ch-status {
+  margin-bottom: 6px;
+  color: #bab9b8;
+}
+
+#chess-helfer-panel .ch-lines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#chess-helfer-panel .ch-lines li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+}
+
+#chess-helfer-panel .ch-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: none;
+}
+
+#chess-helfer-panel .ch-move {
+  flex: 1;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+#chess-helfer-panel .ch-score {
+  font-variant-numeric: tabular-nums;
+  color: #bab9b8;
+}
+
+#chess-helfer-panel .ch-foot {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #8b8987;
+}

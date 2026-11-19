@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Chess-Helfer",
+  "version": "1.0.0",
+  "description": "Stockfish-Zugvorschläge auf chess.com – im Analysebrett und in Partien.",
+  "minimum_chrome_version": "116",
+  "permissions": ["offscreen", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Chess-Helfer",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.chess.com/*"],
+      "js": ["page.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.chess.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
+}
